@@ -421,3 +421,124 @@ prints:
 """
 for i in range(4, 8, 2):
     print(i)
+    
+"""
+To loop over a list, and retrieve both the index and the value of each item in the list
+prints:
+    0 dog
+    1 cat
+    2 mouse
+"""
+animals = ["dog", "cat", "mouse"]
+for i, value in enumerate(animals):
+    print(i, value)
+
+"""
+While loops go until a condition is no longer met.
+prints:
+    0
+    1
+    2
+    3
+"""
+x = 0
+while x < 4:
+    print(x)
+    x += 1  # Shorthand for x = x + 1
+
+# Handle exceptions with a try/except block
+try:
+    # Use "raise" to raise an error
+    raise IndexError("This is an index error")
+except IndexError as e:
+    pass                 # Pass is just a no-op. Usually you would do recovery here.
+except (TypeError, NameError):
+    pass                 # Multiple exceptions can be handled together, if required.
+else:                    # Optional clause to the try/except block. Must follow all except blocks
+    print("All good!")   # Runs only if the code in try raises no exceptions
+finally:                 #  Execute under all circumstances
+    print("We can clean up resources here")
+
+# Instead of try/finally to cleanup resources you can use a with statement
+with open("myfile.txt") as f:
+    for line in f:
+        print(line)
+
+# Writing to a file
+contents = {"aa": 12, "bb": 21}
+with open("myfile1.txt", "w+") as file:
+    file.write(str(contents))        # writes a string to a file
+
+with open("myfile2.txt", "w+") as file:
+    file.write(json.dumps(contents)) # writes an object to a file
+
+# Reading from a file
+with open('myfile1.txt', "r+") as file:
+    contents = file.read()           # reads a string from a file
+print(contents)
+# print: {"aa": 12, "bb": 21}
+
+with open('myfile2.txt', "r+") as file:
+    contents = json.load(file)       # reads a json object from a file
+print(contents)     
+# print: {"aa": 12, "bb": 21}
+
+
+# Python offers a fundamental abstraction called the Iterable.
+# An iterable is an object that can be treated as a sequence.
+# The object returned by the range function, is an iterable.
+
+filled_dict = {"one": 1, "two": 2, "three": 3}
+our_iterable = filled_dict.keys()
+print(our_iterable)  # => dict_keys(['one', 'two', 'three']). This is an object that implements our Iterable interface.
+
+# We can loop over it.
+for i in our_iterable:
+    print(i)  # Prints one, two, three
+
+# However we cannot address elements by index.
+our_iterable[1]  # Raises a TypeError
+
+# An iterable is an object that knows how to create an iterator.
+our_iterator = iter(our_iterable)
+
+# Our iterator is an object that can remember the state as we traverse through it.
+# We get the next object with "next()".
+next(our_iterator)  # => "one"
+
+# It maintains state as we iterate.
+next(our_iterator)  # => "two"
+next(our_iterator)  # => "three"
+
+# After the iterator has returned all of its data, it raises a StopIteration exception
+next(our_iterator)  # Raises StopIteration
+
+# We can also loop over it, in fact, "for" does this implicitly!
+our_iterator = iter(our_iterable)
+for i in our_iterator:
+    print(i)  # Prints one, two, three
+
+# You can grab all the elements of an iterable or iterator by calling list() on it.
+list(our_iterable)  # => Returns ["one", "two", "three"]
+list(our_iterator)  # => Returns [] because state is saved
+
+
+####################################################
+## 4. Functions
+####################################################
+
+# Use "def" to create new functions
+def add(x, y):
+    print("x is {} and y is {}".format(x, y))
+    return x + y  # Return values with a return statement
+
+# Calling functions with parameters
+add(5, 6)  # => prints out "x is 5 and y is 6" and returns 11
+
+# Another way to call functions is with keyword arguments
+add(y=6, x=5)  # Keyword arguments can arrive in any order.
+
+# You can define functions that take a variable number of
+# positional arguments
+def varargs(*args):
+    return args
