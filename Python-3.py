@@ -81,3 +81,56 @@ bool(-6)    # => True
 1 > 10  # => False
 2 <= 2  # => True
 2 >= 2  # => True
+# Seeing whether a value is in a range
+1 < 2 and 2 < 3  # => True
+2 < 3 and 3 < 2  # => False
+# Chaining makes this look nicer
+1 < 2 < 3  # => True
+2 < 3 < 2  # => False
+
+# (is vs. ==) is checks if two variables refer to the same object, but == checks
+# if the objects pointed to have the same values.
+a = [1, 2, 3, 4]  # Point a at a new list, [1, 2, 3, 4]
+b = a             # Point b at what a is pointing to
+b is a            # => True, a and b refer to the same object
+b == a            # => True, a's and b's objects are equal
+b = [1, 2, 3, 4]  # Point b at a new list, [1, 2, 3, 4]
+b is a            # => False, a and b do not refer to the same object
+b == a            # => True, a's and b's objects are equal
+
+# Strings are created with " or '
+"This is a string."
+'This is also a string.'
+
+# Strings can be added too! But try not to do this.
+"Hello " + "world!"  # => "Hello world!"
+# String literals (but not variables) can be concatenated without using '+'
+"Hello " "world!"    # => "Hello world!"
+
+# A string can be treated like a list of characters
+"Hello world!"[0]  # => 'H'
+
+# You can find the length of a string
+len("This is a string")  # => 16
+
+# You can also format using f-strings or formatted string literals (in Python 3.6+)
+name = "Reiko"
+f"She said her name is {name}." # => "She said her name is Reiko"
+# You can basically put any Python statement inside the braces and it will be output in the string.
+f"{name} is {len(name)} characters long." # => "Reiko is 5 characters long."
+
+# None is an object
+None  # => None
+
+# Don't use the equality "==" symbol to compare objects to None
+# Use "is" instead. This checks for equality of object identity.
+"etc" is None  # => False
+None is None   # => True
+
+# None, 0, and empty strings/lists/dicts/tuples all evaluate to False.
+# All other values are True
+bool(0)   # => False
+bool("")  # => False
+bool([])  # => False
+bool({})  # => False
+bool(())  # => False
