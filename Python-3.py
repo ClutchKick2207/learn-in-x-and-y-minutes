@@ -324,3 +324,100 @@ some_set = {1, 1, 2, 2, 3, 4}  # some_set is now {1, 2, 3, 4}
 # Similar to keys of a dictionary, elements of a set have to be immutable.
 invalid_set = {[1], 1}  # => Raises a TypeError: unhashable type: 'list'
 valid_set = {(1,), 1}
+# Add one more item to the set
+filled_set = some_set
+filled_set.add(5)  # filled_set is now {1, 2, 3, 4, 5}
+# Sets do not have duplicate elements
+filled_set.add(5)  # it remains as before {1, 2, 3, 4, 5}
+
+# Do set intersection with &
+other_set = {3, 4, 5, 6}
+filled_set & other_set  # => {3, 4, 5}
+
+# Do set union with |
+filled_set | other_set  # => {1, 2, 3, 4, 5, 6}
+
+# Do set difference with -
+{1, 2, 3, 4} - {2, 3, 5}  # => {1, 4}
+
+# Do set symmetric difference with ^
+{1, 2, 3, 4} ^ {2, 3, 5}  # => {1, 4, 5}
+
+# Check if set on the left is a superset of set on the right
+{1, 2} >= {1, 2, 3} # => False
+
+# Check if set on the left is a subset of set on the right
+{1, 2} <= {1, 2, 3} # => True
+
+# Check for existence in a set with in
+2 in filled_set   # => True
+10 in filled_set  # => False
+
+# Make a one layer deep copy
+filled_set = some_set.copy()  # filled_set is {1, 2, 3, 4, 5}
+filled_set is some_set        # => False
+
+
+####################################################
+## 3. Control Flow and Iterables
+####################################################
+
+# Let's just make a variable
+some_var = 5
+
+# Here is an if statement. Indentation is significant in Python!
+# Convention is to use four spaces, not tabs.
+# This prints "some_var is smaller than 10"
+if some_var > 10:
+    print("some_var is totally bigger than 10.")
+elif some_var < 10:    # This elif clause is optional.
+    print("some_var is smaller than 10.")
+else:                  # This is optional too.
+    print("some_var is indeed 10.")
+
+
+"""
+For loops iterate over lists
+prints:
+    dog is a mammal
+    cat is a mammal
+    mouse is a mammal
+"""
+for animal in ["dog", "cat", "mouse"]:
+    # You can use format() to interpolate formatted strings
+    print("{} is a mammal".format(animal))
+
+"""
+"range(number)" returns an iterable of numbers
+from zero to the given number
+prints:
+    0
+    1
+    2
+    3
+"""
+for i in range(4):
+    print(i)
+
+"""
+"range(lower, upper)" returns an iterable of numbers
+from the lower number to the upper number
+prints:
+    4
+    5
+    6
+    7
+"""
+for i in range(4, 8):
+    print(i)
+
+"""
+"range(lower, upper, step)" returns an iterable of numbers
+from the lower number to the upper number, while incrementing
+by step. If step is not indicated, the default value is 1.
+prints:
+    4
+    6
+"""
+for i in range(4, 8, 2):
+    print(i)
