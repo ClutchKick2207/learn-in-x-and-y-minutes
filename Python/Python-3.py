@@ -9,17 +9,18 @@ being used in the script.
 """
 
 ####################################################
-## 1. Primitive Datatypes and Operators
+## 1. Primitive Datatypes and Operators (Simple)
 ####################################################
 
-# You have numbers
+# Numbers
 3  # => 3
+#Saved as an integer
 
-# Math is what you would expect
-1 + 1   # => 2
-8 - 1   # => 7
-10 * 2  # => 20
-35 / 5  # => 7.0
+# Math
+1 + 1   # => 2 (addition)
+8 - 1   # => 7 (substraction)
+10 * 2  # => 20 (multiplication)
+35 / 5  # => 7.0 (division)
 
 # Integer division rounds down for both positive and negative numbers.
 5 // 3       # => 1
