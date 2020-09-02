@@ -1,8 +1,11 @@
-# Single line comments start with a number symbol.
+# Single line comments start with a hashtag
 
-""" Multiline strings can be written
-    using three "s, and are often used
-    as documentation.
+""" 
+Multiline strings can be written
+using three "s, and are often used
+as documentation. Multi-line comments
+only work if no multi-line strings are 
+being used in the script.
 """
 
 ####################################################
