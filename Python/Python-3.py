@@ -28,13 +28,13 @@ being used in the script.
 5.0 // 3.0   # => 1.0 # works on floats too (would usually be 1.67)
 -5.0 // 3.0  # => -2.0 (would usually be -1.67)
 
-# The result of division is always a float
+# The result of division is always a float (unless forced to be otherwise)
 10.0 / 3  # => 3.3333333333333335
 
-# Modulo operation
+# Modulo operation (the remainder of an operation)
 7 % 3  # => 1
 
-# Exponentiation (x**y, x to the yth power)
+# Exponentiation (x^y, x to the yth power)
 2**3  # => 8
 
 # Enforce precedence with parentheses
