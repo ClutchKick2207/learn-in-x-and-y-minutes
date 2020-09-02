@@ -23,10 +23,10 @@ being used in the script.
 35 / 5  # => 7.0 (division)
 
 # Integer division rounds down for both positive and negative numbers.
-5 // 3       # => 1
--5 // 3      # => -2
-5.0 // 3.0   # => 1.0 # works on floats too
--5.0 // 3.0  # => -2.0
+5 // 3       # => 1 (would usually be 1.67)
+-5 // 3      # => -2 (would usually be -1.67)
+5.0 // 3.0   # => 1.0 # works on floats too (would usually be 1.67)
+-5.0 // 3.0  # => -2.0 (would usually be -1.67)
 
 # The result of division is always a float
 10.0 / 3  # => 3.3333333333333335
