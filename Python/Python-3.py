@@ -65,8 +65,8 @@ False - 5   # => -5
 2 == True   # => False
 -5 != False # => True
 
-# Using boolean logical operators on ints casts them to booleans for evaluation, but their non-cast value is returned
-# Don't mix up with bool(ints) and bitwise and/or (&,|)
+# Using boolean logical operators on integers casts them to booleans for evaluation, but their non-cast value is returned
+# Don't mix up with bool(integer) and bitwise and/or (&,|)
 bool(0)     # => False
 bool(4)     # => True
 bool(-6)    # => True
