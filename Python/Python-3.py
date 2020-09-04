@@ -73,7 +73,7 @@ bool(-6)    # => True
 0 and 2     # => 0
 -5 or 0     # => -5
 
-# Equality is ==
+# Equality is == (i.e. '=')
 1 == 1  # => True
 2 == 1  # => False
 
