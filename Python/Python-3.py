@@ -77,7 +77,7 @@ bool(-6)    # => True
 1 == 1  # => True
 2 == 1  # => False
 
-# Inequality is !=
+# Inequality is != (i.e. 'not equal to')
 1 != 1  # => False
 2 != 1  # => True
 
