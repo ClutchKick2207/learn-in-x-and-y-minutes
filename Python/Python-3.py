@@ -82,10 +82,10 @@ bool(-6)    # => True
 2 != 1  # => True
 
 # More comparisons
-1 < 10  # => True
-1 > 10  # => False
-2 <= 2  # => True
-2 >= 2  # => True
+1 < 10  # => True (less than)
+1 > 10  # => False (more than)
+2 <= 2  # => True (less than/equal to)
+2 >= 2  # => True (more than/equal to)
 
 # Seeing whether a value is in a range
 1 < 2 and 2 < 3  # => True
