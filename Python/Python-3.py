@@ -95,8 +95,8 @@ bool(-6)    # => True
 2 < 3 < 2  # => False
 
 # (is vs. ==) is checks if two variables refer to the same object, but == checks if the objects pointed to have the same values.
-a = [1, 2, 3, 4]  # Point a at a new list, [1, 2, 3, 4]
-b = a             # Point b at what a is pointing to
+a = [1, 2, 3, 4]  # Point a at a new list, [1, 2, 3, 4] (i.e. assigning it)
+b = a             # Point b at what a is pointing to (i.e. assigning 'b' to the same value as 'a')
 b is a            # => True, a and b refer to the same object
 b == a            # => True, a's and b's objects are equal
 b = [1, 2, 3, 4]  # Point b at a new list, [1, 2, 3, 4]
@@ -107,6 +107,7 @@ b == a            # => True, a's and b's objects are equal
 "This is a string."
 'This is also a string.'
 
+#NOT BEST PRACTICE, ONLY INCLUDED SO YOU KNOW!
 # Strings can be added too! But try not to do this.
 "Hello " + "world!"  # => "Hello world!"
 # String literals (but not variables) can be concatenated without using '+'
