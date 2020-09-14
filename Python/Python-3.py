@@ -191,11 +191,11 @@ li[0]   # => 1
 li[-1]  # => 3
 
 # Looking out of bounds is an IndexError
-li[4]  # Raises an IndexError
+li[4]  # Raises an IndexError as it cannot be found (better to use things such as search from the end instead)
 
 # You can look at ranges with slice syntax.
 # The start index is included, the end index is not
-# (It's a closed/open range for you mathy types.)
+# (It's a closed/open range for you 'mathy' types.)
 li[1:3]   # Return list from index 1 to 3 => [2, 4]
 li[2:]    # Return list starting from index 2 => [4, 3]
 li[:3]    # Return list from beginning until index 3  => [1, 2, 4]
